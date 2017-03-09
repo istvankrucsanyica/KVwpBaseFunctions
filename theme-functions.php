@@ -45,14 +45,20 @@
    *  - Site functions
    */
 
-  if ( is_admin() ) :
-    // Add admin notifications
-    include( 'admin-notifications.php' );
-  endif;
+  $includes = array(
+    'google-analytics.php' // Insert Google Analytics code
+  );
 
-  // Insert Google Analytics code
-  include( 'google-analytics.php' );
+  if ( is_admin() ) {
+    $includes_admin = array(
+      'admin-notifications.php' // Add admin notifications
+    );
+    $includes = array_merge($includes,$includes_admin);
+  }
 
+  foreach ( $includes as $i ) {
+    locate_template( $i, true, true );
+  }
 
 ?>
 
