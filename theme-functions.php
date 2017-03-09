@@ -16,6 +16,7 @@
   define( 'THEME_DIR', get_template_directory() );
   define( 'THEME_URL', get_template_directory_uri() );
   define( 'DEVELOPER_NAME', 'Kreatív Vonalak' );
+  define( 'DEVELOPER_URL', 'http://www.kreativvonalak.hu/' );
   define( 'GA_CODE', '' );
   define( 'USE_EDITOR_STYLE', TRUE );
 
@@ -46,6 +47,7 @@
    */
 
   $includes = array(
+    'login-screen.php', // Login screen modification
     'google-analytics.php' // Insert Google Analytics code
   );
 
