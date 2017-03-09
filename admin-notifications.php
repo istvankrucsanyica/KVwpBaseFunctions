@@ -16,7 +16,7 @@
       add_action( 'admin_notices', 'kvbf_showDebugMessages' );
       function kvbf_showDebugMessages() {
         echo '<div id="message" class="notice notice-warning">';
-          echo '<p><strong>FIGYELEM!</strong> A <strong><em>DEBUG MÓD</em></strong> aktív. Az oldal élesítése előtt inaktíválandó!</p>';
+          echo '<p><strong>' . __('FIGYELEM!', TEXTDOMAIN) . '</strong> <strong><em>DEBUG MOD</em></strong> ' . __('aktív. Az oldal élesítése előtt inaktíválandó!', TEXTDOMAIN) . '</p>';
         echo '</div>';
       }
     }
@@ -25,7 +25,7 @@
       add_action( 'admin_notices', 'kvbf_showDebugMessages2' );
       function kvbf_showDebugMessages2() {
         echo '<div id="message" class="notice notice-warning">';
-          echo '<p><strong>FIGYELEM!</strong> Nincs megadva a Fejlesztő cég neve.</p>';
+          echo '<p><strong>' . __('FIGYELEM!', TEXTDOMAIN) . '</strong> ' . __('Nincs megadva a Fejlesztő cég neve.', TEXTDOMAIN) . '</p>';
         echo '</div>';
       }
     }
@@ -34,7 +34,7 @@
       add_action( 'admin_notices', 'kvbf_showDebugMessages3' );
       function kvbf_showDebugMessages3() {
         echo '<div id="message" class="notice notice-warning">';
-          echo '<p><strong>FIGYELEM!</strong> Nincs megadva a Google Analytics követőkód.</p>';
+          echo '<p><strong>' . __('FIGYELEM!', TEXTDOMAIN) . '</strong> ' . __('Nincs megadva a Google Analytics követőkód.', TEXTDOMAIN) . '</p>';
         echo '</div>';
       }
     }
@@ -43,7 +43,7 @@
       add_action( 'admin_notices', 'kvbf_showDebugMessages4' );
       function kvbf_showDebugMessages4() {
         echo '<div id="message" class="notice notice-error">';
-          echo '<p><strong>HIBA!</strong> Nincs definiálva a TEXTDOMAIN a functions.php-ban!.</p>';
+          echo '<p><strong>' . __('HIBA!', TEXTDOMAIN) . '</strong> ' . __('Nincs definiálva a TEXTDOMAIN a functions.php-ban!.', TEXTDOMAIN) . '</p>';
         echo '</div>';
       }
     }
@@ -52,7 +52,7 @@
       add_action( 'admin_notices', 'kvbf_showDebugMessages5' );
       function kvbf_showDebugMessages5() {
         echo '<div id="message" class="notice notice-info">';
-          echo '<p><strong>HELLO!</strong> A Téma nem tartalmaz editor-style.css file-t. Cselekedj ma jót és készítsd el :)</p>';
+          echo '<p><strong>' . __('HELLO!', TEXTDOMAIN) . '</strong> ' . __('A Téma nem tartalmaz editor-style.css file-t. Cselekedj ma jót és készítsd el :)', TEXTDOMAIN) . '</p>';
         echo '</div>';
       }
     }
