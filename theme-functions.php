@@ -46,8 +46,12 @@
    */
 
   if ( is_admin() ) :
+    // Add admin notifications
     include( 'admin-notifications.php' );
   endif;
+
+  // Insert Google Analytics code
+  include( 'google-analytics.php' );
 
 
 ?>
