@@ -80,17 +80,17 @@
    */
 
   $includes = array(
-    'remove-metas.php', // Disable/Remove meta elements
-    'disable-rss.php', // Disable RSS, Atom feeds
-    'disable-emoji.php', // Disable WP emoji
-    'disable-json.php', // Disable WP-JSON
-    'google-analytics.php', // Insert Google Analytics code
-    'login-screen.php' // Login screen modification
+    'remove-metas.php',             // Disable/Remove meta elements
+    'disable-rss.php',              // Disable RSS, Atom feeds
+    'disable-emoji.php',            // Disable WP emoji
+    'disable-json.php',             // Disable WP-JSON
+    'google-analytics.php',         // Insert Google Analytics code
+    'login-screen.php'              // Login screen modification
   );
 
   if ( is_admin() ) {
     $includes_admin = array(
-      'admin-notifications.php' // Add admin notifications
+      'admin-notifications.php'     // Add admin notifications
     );
     $includes = array_merge($includes,$includes_admin);
   }
