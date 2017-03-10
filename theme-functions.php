@@ -80,11 +80,12 @@
    */
 
   $includes = array(
-    'login-screen.php', // Login screen modification
-    'google-analytics.php', // Insert Google Analytics code
-    'disable-emoji.php', // Disable WP emoji
+    'remove-metas.php', // Disable/Remove meta elements
     'disable-rss.php', // Disable RSS, Atom feeds
-    'remove-metas.php' // Disable/Remove meta elements
+    'disable-emoji.php', // Disable WP emoji
+    'disable-json.php', // Disable WP-JSON
+    'google-analytics.php', // Insert Google Analytics code
+    'login-screen.php' // Login screen modification
   );
 
   if ( is_admin() ) {
