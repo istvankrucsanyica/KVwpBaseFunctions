@@ -85,6 +85,7 @@
     'disable-emoji.php',            // Disable WP emoji
     'disable-json.php',             // Disable WP-JSON
     'google-analytics.php',         // Insert Google Analytics code
+    'yoast.php',                    // If use YOAST plugin -> Remove YOAST plugin generated comments
     'login-screen.php'              // Login screen modification
   );
 
