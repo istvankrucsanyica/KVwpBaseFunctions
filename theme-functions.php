@@ -83,7 +83,8 @@
     'login-screen.php', // Login screen modification
     'google-analytics.php', // Insert Google Analytics code
     'disable-emoji.php', // Disable WP emoji
-    'disable-rss.php' // Disable RSS, Atom feeds
+    'disable-rss.php', // Disable RSS, Atom feeds
+    'remove-metas.php' // Disable/Remove meta elements
   );
 
   if ( is_admin() ) {
