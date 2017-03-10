@@ -11,7 +11,9 @@
    */
 
 
-  /** Define main variables */
+  /**
+   * Define main variables
+   */
   define( 'TEXTDOMAIN', '' );
   define( 'THEME_DIR', get_template_directory() );
   define( 'THEME_URL', get_template_directory_uri() );
@@ -21,7 +23,9 @@
   define( 'USE_EDITOR_STYLE', TRUE );
 
 
-  /** Define social variables */
+  /**
+   * Define social variables
+   */
   define( 'FACEBOOK', '' );
   define( 'YOUTUBE', '' );
   define( 'TWITTER', '' );
@@ -29,26 +33,57 @@
 
 
 
-  /** Rewrite global definition */
+  /**
+   * Rewrite global definition
+   */
 
-  /** Megtiltjuk, minden felhasználónak, hogy új témát, plugin-t tudjon feltölteni */
+
+  /**
+   * Megtiltjuk, minden felhasználónak, hogy új témát, plugin-t tudjon feltölteni
+   */
   //define( 'DISALLOW_FILE_MODS', true );
 
-  /** Megtiltjuk minden felhasználónak, hogy szerkeszteni tudja a téma vagy a plugin file-jait */
+  /**
+   * Megtiltjuk minden felhasználónak, hogy szerkeszteni tudja a téma vagy a plugin file-jait
+   */
   define( 'DISALLOW_FILE_EDIT', true );
+
+  /**
+   * Egy adott posztból hány db változatot őrizzen meg a WP,
+   * ha a szám helyett false szerepel, le van tiltva az adott funkció
+   */
+  define( 'WP_POST_REVISIONS', 3 );
+
+  /**
+   * A WP X nap után törli a lomtárat
+   * Ha 0, akkor a WP nem kérdezz rá, hogy akarja-e törölni,
+   * hanem automatikusan törli anélkül, hogy a lomtárba helyezné az adott elemet
+   */
+  define('EMPTY_TRASH_DAYS', 7);
+
+  /**
+   * x másodperc után mentődjön a post, az alap 60 mp
+   */
+  define('AUTOSAVE_INTERVAL', 120);
+
+  /**
+   * alapértelmezett téma beállítása
+   */
+  //define('WP_DEFAULT_THEME', '');
 
 
 
   /**
    * Include functions
-   *
-   *  - Admin functions
    *  - Site functions
+   *  - Admin functions
    */
 
   $includes = array(
     'login-screen.php', // Login screen modification
-    'google-analytics.php' // Insert Google Analytics code
+    'google-analytics.php', // Insert Google Analytics code
+    'disable-emoji.php', // Disable WP emoji
+    'disable-rss.php' // Disable RSS, Atom feeds
   );
 
   if ( is_admin() ) {
