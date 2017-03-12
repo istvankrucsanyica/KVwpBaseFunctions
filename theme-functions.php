@@ -92,7 +92,8 @@
 
   if ( is_admin() ) {
     $includes_admin = array(
-      'admin-notifications.php'     // Add admin notifications
+      'admin-notifications.php',    // Add admin notifications
+      'core-functions.php'          // Updates and more
     );
     $includes = array_merge($includes,$includes_admin);
   }
