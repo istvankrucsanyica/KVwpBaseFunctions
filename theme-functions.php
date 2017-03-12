@@ -91,9 +91,9 @@
     'google-analytics.php',         // Insert Google Analytics code
     'yoast.php',                    // If use YOAST plugin -> Remove YOAST plugin generated comments
     'wpml.php',                     // WPML functions
-    'widgets.php',                  // Register Widget area
+    'widget.php',                   // Register Widget area
     'shortcodes.php',               // Shortcodes
-    'media.php',                    // Media functions
+    'thumbnail.php',                // Media functions
     'login-screen.php'              // Login screen modification
   );
 
@@ -108,8 +108,7 @@
   }
 
   foreach ( $includes as $i ) {
-    locate_template( $i, true, true );
+    require_once( $i );
   }
 
 ?>
-
