@@ -39,7 +39,7 @@
 
 
   function kvbf_add_shortcode_tinymce_plugin( $plugin_array ) {
-    $plugin_array['KvbfShortcodes'] = get_template_directory_uri() .'/inc/tinymce/shortcode_mce.js';
+    $plugin_array['KvbfShortcodes'] = get_template_directory_uri() .'/includes/tinymce/shortcode_mce.js';
     return $plugin_array;
   }
 
