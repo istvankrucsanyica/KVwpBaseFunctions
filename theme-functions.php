@@ -90,6 +90,7 @@
     'wpml.php',                     // WPML functions
     'widgets.php',                  // Register Widget area
     'shortcodes.php',               // Shortcodes
+    'media.php',                    // Media functions
     'login-screen.php'              // Login screen modification
   );
 
