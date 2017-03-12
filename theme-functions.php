@@ -99,7 +99,8 @@
     $includes_admin = array(
       'admin-notifications.php',    // Add admin notifications
       'admin-area.php',             // Modificate admin area
-      'core-functions.php'          // Updates and more
+      'core-functions.php',         // Updates and more
+      'tmce-editor.php'             // Editor functions, add shortcodes to the tinyMCE
     );
     $includes = array_merge($includes,$includes_admin);
   }
