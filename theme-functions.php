@@ -89,6 +89,7 @@
     'yoast.php',                    // If use YOAST plugin -> Remove YOAST plugin generated comments
     'wpml.php',                     // WPML functions
     'widgets.php',                  // Register Widget area
+    'shortcodes.php',               // Shortcodes
     'login-screen.php'              // Login screen modification
   );
 
