@@ -84,6 +84,7 @@
     'disable-rss.php',              // Disable RSS, Atom feeds
     'disable-emoji.php',            // Disable WP emoji
     'disable-json.php',             // Disable WP-JSON
+    'disable-oembed.php'            // Disable oEmbend
     'google-analytics.php',         // Insert Google Analytics code
     'yoast.php',                    // If use YOAST plugin -> Remove YOAST plugin generated comments
     'login-screen.php'              // Login screen modification
