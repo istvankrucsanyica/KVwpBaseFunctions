@@ -81,6 +81,7 @@
 
   $includes = array(
     'theme.php',                    // Add theme supports and more functions
+    'navigation.php',               // Custom navigation
     'remove-metas.php',             // Disable/Remove meta elements
     'disable-rss.php',              // Disable RSS, Atom feeds
     'disable-emoji.php',            // Disable WP emoji
