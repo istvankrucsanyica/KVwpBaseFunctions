@@ -21,6 +21,7 @@
   define( 'DEVELOPER_URL', 'http://www.kreativvonalak.hu/' );
   define( 'GA_CODE', '' );
   define( 'USE_EDITOR_STYLE', TRUE );
+  define( 'USE_CUSTOM_POST_TYPES', FALSE );
 
 
   /**
@@ -70,6 +71,19 @@
    * alapértelmezett téma beállítása
    */
   //define('WP_DEFAULT_THEME', '');
+
+
+
+  /**
+   * Ha USE_CUSTOM_POST_TYPES === TRUE
+   * Példa: cpt-example.md
+   * Hozz létre az includes mappán belül egy új file-t, az elnevezésben kövesd az alábbi patternt:
+   * CUSTOM_POST_TYPES_NAME-post.php
+   * Majd a létrehozott file-t add hozzá a $includes tömbhöz.
+   */
+  if ( USE_CUSTOM_POST_TYPES === TRUE ):
+    require_once 'CPT_Core.php';
+  endif;
 
 
 
