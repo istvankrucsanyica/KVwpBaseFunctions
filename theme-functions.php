@@ -118,6 +118,7 @@
     'shortcodes.php',               // Shortcodes
     'thumbnail.php',                // Media functions
     'disable-search.php',           // Disable search
+    'disable-comments.php',         // Disable comments
     'login-screen.php'              // Login screen modification
   );
 
