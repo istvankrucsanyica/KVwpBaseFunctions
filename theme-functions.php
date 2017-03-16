@@ -7,7 +7,7 @@
    * @copyright (c) 2017, GNUv2
    * @package KVwpBaseFunctions
    * @since 1.0
-   * @version 1.0
+   * @version 1.0.1
    */
 
 
@@ -117,6 +117,7 @@
     'widget.php',                   // Register Widget area
     'shortcodes.php',               // Shortcodes
     'thumbnail.php',                // Media functions
+    'disable-search.php',           // Disable search
     'login-screen.php'              // Login screen modification
   );
 
