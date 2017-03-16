@@ -21,6 +21,15 @@
   define( 'DEVELOPER_URL', 'http://www.kreativvonalak.hu/' );
   define( 'GA_CODE', '' );
   define( 'USE_EDITOR_STYLE', TRUE );
+  /**
+   * Használat:
+   * Ha jó a beépített, akkor hagyjuk üresen a CUSTOM_LOGIN_LOGO-t.
+   * Ha szeretnénk egyedi logót, akkor használjuk a következő formulát:
+   * KÉPFILE_NEVE - pl.: custom_logo.png
+   * define( 'CUSTOM_LOGIN_LOGO', serialize(array('KÉPFILE_NEVE', 'KÉPFILE_MAGASSÁGA', 'KÉPFILE_SZÉLESSÉGE')) );
+   * KÉPFILE_MAGASSÁGA és KÉPFILE_SZÉLESSÉGE - pl.: 55, a px kiterjesztést nem kell hozzáteni
+   */
+  define( 'CUSTOM_LOGIN_LOGO', '' );
   define( 'USE_CUSTOM_POST_TYPES', FALSE );
 
 

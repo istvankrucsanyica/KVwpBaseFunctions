@@ -12,11 +12,16 @@
 
 
 
-  // Change admon login logo - respect Ricsi
+  // Change admin login logo - thx Ricsi
   function kvbf_login_logo() {
-    $logo_image = '';
-    $height = 51;
-    $width  = 331;
+    if ( ! empty(CUSTOM_LOGIN_LOGO) ) :
+      $logo_info  = unserialize(CUSTOM_LOGIN_LOGO);
+      $logo_image = $logo_info[0];
+      $height     = $logo_info[1];
+      $width      = $logo_info[2];
+    else:
+      $logo_image = '';
+    endif;
     if ( $logo_image == '') {
       $image = THEME_URL . '/includes/login/admin_logo.svg';
       $w = '';
