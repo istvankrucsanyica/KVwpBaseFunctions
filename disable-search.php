@@ -11,13 +11,12 @@
    */
 
   function kvbf_disable_search( $query, $error = true ) {
-
-  if ( is_search() ) {
-    $query->is_search = false;
-    $query->query_vars[s] = false;
-    $query->query[s] = false;
-    if ( $error == true )
-      wp_redirect( site_url(), 301 ); exit;
+    if ( is_search() ) {
+      $query->is_search = false;
+      $query->query_vars[s] = false;
+      $query->query[s] = false;
+      if ( $error == true )
+        wp_redirect( site_url(), 301 ); exit;
     }
   }
   add_action( 'parse_query', 'kvbf_disable_search' );
