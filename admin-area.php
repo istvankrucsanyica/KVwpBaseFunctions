@@ -7,7 +7,7 @@
    * @copyright (c) 2017, GNUv2
    * @package KVwpBaseFunctions
    * @since 1.0
-   * @version 1.0.1
+   * @version 1.0.2
    */
 
 
@@ -47,14 +47,10 @@
   /**
    * Disable admin help link
    */
-  add_action('admin_head', 'kvbf_disable_help_adminLink');
-  function kvbf_disable_help_adminLink() {
-    if(is_admin()){
-      echo '
-      <style type="text/css">
-        #contextual-help-link-wrap { display: none !important; }
-      </style>';
-    }
+  add_action('admin_head', 'kvbf_remove_help_tabs');
+  function kvbf_remove_help_tabs() {
+    $screen = get_current_screen();
+    $screen->remove_help_tabs();
   }
 
 ?>
