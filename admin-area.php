@@ -7,7 +7,7 @@
    * @copyright (c) 2017, GNUv2
    * @package KVwpBaseFunctions
    * @since 1.0
-   * @version 1.0
+   * @version 1.0.1
    */
 
 
@@ -40,6 +40,20 @@
   function kvbf_clear_admin_dashboard_footer_right() {
     if ( ! current_user_can( 'update_core' ) ) {
       remove_filter( 'update_footer', 'core_update_footer' );
+    }
+  }
+
+
+  /**
+   * Disable admin help link
+   */
+  add_action('admin_head', 'kvbf_disable_help_adminLink');
+  function kvbf_disable_help_adminLink() {
+    if(is_admin()){
+      echo '
+      <style type="text/css">
+        #contextual-help-link-wrap { display: none !important; }
+      </style>';
     }
   }
 
