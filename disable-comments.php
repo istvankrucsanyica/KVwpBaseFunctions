@@ -68,11 +68,10 @@
 
 
   // Remove comments links from admin bar
-  function kvbf_disable_comments_admin_bar() {
-    if ( is_admin_bar_showing() ) {
-      remove_action( 'admin_bar_menu', 'wp_admin_bar_comments_menu', 60 );
-    }
+  function kvbf_admin_bar_render() {
+    global $wp_admin_bar;
+    $wp_admin_bar->remove_menu('comments');
   }
-  add_action( 'init', 'kvbf_disable_comments_admin_bar' );
+  add_action( 'wp_before_admin_bar_render', 'kvbf_admin_bar_render' );
 
 ?>
