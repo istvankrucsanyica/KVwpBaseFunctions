@@ -7,7 +7,7 @@
    * @copyright (c) 2017, GNUv2
    * @package KVwpBaseFunctions
    * @since 1.0
-   * @version 1.0.1
+   * @version 1.0.2
    */
 
 
@@ -31,6 +31,7 @@
    */
   define( 'CUSTOM_LOGIN_LOGO', '' );
   define( 'USE_CUSTOM_POST_TYPES', FALSE );
+  define( 'SHOW_DEBUG_BAR', FALSE );
 
 
   /**
@@ -135,5 +136,13 @@
   foreach ( $includes as $i ) {
     require_once( $i );
   }
+
+
+  /**
+   * Show debug bar
+   */
+  if ( SHOW_DEBUG_BAR === TRUE ):
+    require_once 'show-debugbar.php';
+  endif;
 
 ?>
