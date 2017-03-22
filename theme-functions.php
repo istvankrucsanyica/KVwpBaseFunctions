@@ -7,7 +7,7 @@
    * @copyright (c) 2017, GNUv2
    * @package KVwpBaseFunctions
    * @since 1.0
-   * @version 1.0.4
+   * @version 1.0.5
    */
 
 
@@ -31,6 +31,7 @@
    */
   define( 'CUSTOM_LOGIN_LOGO', '' );
   define( 'ENABLE_CUSTOM_POST_TYPES', FALSE );
+  define( 'ENABLE_CUSTOM_POST_TYPES_COLUMNS', FALSE );
   define( 'SHOW_DEBUG_BAR', FALSE );
 
 
@@ -95,6 +96,14 @@
     require_once 'CPT_Core.php';
   endif;
 
+
+  /**
+   * Ha ENABLE_CUSTOM_POST_TYPES_COLUMNS === TRUE
+   * Példa: cpt-example.md
+   */
+  if ( ENABLE_CUSTOM_POST_TYPES_COLUMNS === TRUE ):
+    require_once 'CPT_Columns.php';
+  endif;
 
 
   /**

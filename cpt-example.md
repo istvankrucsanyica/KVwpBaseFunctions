@@ -26,3 +26,69 @@ További információ: [register_post_type()](https://developer.wordpress.org/re
     )
   );
 ```
+
+
+##CUSTOM POST TYPES COLUMNS
+
+**Példányosítsuk a class-t**
+
+```php
+  $post_columns = new CPT_Columns( 'post' );
+
+  // Ha cserélni vagy újra rendezni szerétnénk az oszlopokat, akkor második maraméterként adjuk meg a true-t
+  $post_columns = new CPT_Columns( 'post', true );
+```
+
+**Adjuk hozzá példaként a title (natív) oszlopot**
+```php
+  $post_columns->add_column('title',
+    array(
+      'label'    => __('Title'),
+      'type'     => 'native',
+      'sortable' => true
+    )
+  );
+```
+
+**Ha használunk thumbnailt, akkor azt is egyszerűen hozzáadhatjuk**
+```php
+  $post_columns->add_column('post_thumb',
+    array(
+      'label' => __('Thumb'),
+      'type'  => 'thumb',
+      'size'  => array('80,80')
+    )
+  );
+```
+
+**Taxonómia hozzáadása**
+```php
+  $post_columns->add_column('custom_tax_id',
+    array(
+      'label'    => __('Custom Taxonomy'),
+      'type'     => 'custom_tax',
+      'taxonomy' => 'category' //taxonomy name
+    )
+  );
+```
+
+**Egyedi mező (custom field) hozzáadása**
+```php
+  $post_columns->add_column('price',
+    array(
+      'label'    => __('Custom Field'),
+      'type'     => 'post_meta',
+      'meta_key' => 'price', // meta_key
+      'orderby'  => 'meta_value', // meta_value, meta_value_num
+      'sortable' => true,
+      'prefix'   => "$",
+      'suffix'   => "",
+      'def'      => "", // default value in case post meta not found
+    )
+  );
+```
+
+**Oszlop eltávolítása (pl.: dátum)**
+```php
+  $post_columns->remove_column('date');
+```
