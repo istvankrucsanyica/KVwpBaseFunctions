@@ -7,7 +7,7 @@
    * @copyright (c) 2017, GNUv2
    * @package KVwpBaseFunctions
    * @since 1.0
-   * @version 1.0.2
+   * @version 1.0.3
    */
 
 
@@ -120,6 +120,7 @@
     'thumbnail.php',                // Media functions
     'disable-search.php',           // Disable search
     'disable-comments.php',         // Disable comments
+    'admin-bar.php',                // Admin bar modification
     'login-screen.php'              // Login screen modification
   );
 

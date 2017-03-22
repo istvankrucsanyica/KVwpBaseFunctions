@@ -7,7 +7,7 @@
    * @copyright (c) 2017, GNUv2
    * @package KVwpBaseFunctions
    * @since 1.0
-   * @version 1.0.2
+   * @version 1.0.3
    */
 
 
@@ -20,16 +20,6 @@
     function kvbf_remove_footer_admin() {
       echo '&copy; '.date('Y').' '.DEVELOPER_NAME;
     }
-  }
-
-
-  /**
-   * Remove WP logo from admin bar header
-   */
-  add_action( 'wp_before_admin_bar_render', 'kvbf_admin_bar_remove', 999 );
-  function kvbf_admin_bar_remove() {
-    global $wp_admin_bar;
-    $wp_admin_bar->remove_menu( 'wp-logo' );
   }
 
 
