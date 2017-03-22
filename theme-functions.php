@@ -7,7 +7,7 @@
    * @copyright (c) 2017, GNUv2
    * @package KVwpBaseFunctions
    * @since 1.0
-   * @version 1.0.3
+   * @version 1.0.4
    */
 
 
@@ -30,7 +30,7 @@
    * KÉPFILE_MAGASSÁGA és KÉPFILE_SZÉLESSÉGE - pl.: 55, a px kiterjesztést nem kell hozzáteni
    */
   define( 'CUSTOM_LOGIN_LOGO', '' );
-  define( 'USE_CUSTOM_POST_TYPES', FALSE );
+  define( 'ENABLE_CUSTOM_POST_TYPES', FALSE );
   define( 'SHOW_DEBUG_BAR', FALSE );
 
 
@@ -85,13 +85,13 @@
 
 
   /**
-   * Ha USE_CUSTOM_POST_TYPES === TRUE
+   * Ha ENABLE_CUSTOM_POST_TYPES === TRUE
    * Példa: cpt-example.md
    * Hozz létre az includes mappán belül egy új file-t, az elnevezésben kövesd az alábbi patternt:
    * CUSTOM_POST_TYPES_NAME-post.php
    * Majd a létrehozott file-t add hozzá a $includes tömbhöz.
    */
-  if ( USE_CUSTOM_POST_TYPES === TRUE ):
+  if ( ENABLE_CUSTOM_POST_TYPES === TRUE ):
     require_once 'CPT_Core.php';
   endif;
 
