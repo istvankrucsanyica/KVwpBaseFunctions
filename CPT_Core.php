@@ -4,6 +4,7 @@ if ( ! class_exists( 'CPT_Core' ) ) :
 
   /**
    * Class for generating Custom Post Types.
+   * @since 1.0.1
    * @version 1.0.0
    * @author  Justin Sternberg <https://github.com/Mte90/CPT_Core>
    */

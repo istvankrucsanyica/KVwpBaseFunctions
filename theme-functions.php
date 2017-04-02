@@ -7,7 +7,7 @@
    * @copyright (c) 2017, GNUv2
    * @package KVwpBaseFunctions
    * @since 1.0
-   * @version 1.0.5
+   * @version 1.0.6
    */
 
 
@@ -33,6 +33,7 @@
   define( 'ENABLE_CUSTOM_POST_TYPES', FALSE );
   define( 'ENABLE_CUSTOM_POST_TYPES_COLUMNS', FALSE );
   define( 'SHOW_DEBUG_BAR', FALSE );
+  define( 'ENABLE_COOKIE_NOTICE', FALSE );
 
 
   /**
@@ -88,7 +89,7 @@
   /**
    * Ha ENABLE_CUSTOM_POST_TYPES === TRUE
    * Példa: cpt-example.md
-   * Hozz létre az includes mappán belül egy új file-t, az elnevezésben kövesd az alábbi patternt:
+   * Hozz létre a types mappán belül egy új file-t, az elnevezésben kövesd az alábbi patternt:
    * CUSTOM_POST_TYPES_NAME-post.php
    * Majd a létrehozott file-t add hozzá a $includes tömbhöz.
    */
@@ -103,6 +104,22 @@
    */
   if ( ENABLE_CUSTOM_POST_TYPES_COLUMNS === TRUE ):
     require_once 'CPT_Columns.php';
+  endif;
+
+
+  /**
+   * Ha ENABLE_COOKIE_NOTICE === TRUE
+   * Tájékoztató a sütik használatáról
+   * Példa: README.md
+   */
+  if ( ENABLE_COOKIE_NOTICE === TRUE ):
+    require_once 'enable-cookie-notice.php';
+    $cookieNotice = new KVBF_CookieNotice();
+    $cookieNotice->setTime( '+30 days' );
+    $cookieNotice->setName( 'cookieNoticeAccepted' );
+    $cookieNotice->setButonName( 'Elfogadom' );
+    $cookieNotice->setMessage( 'Kedves Látogató! Tájékoztatjuk, hogy a honlap felhasználói élmény fokozásának érdekében sütiket alkalmazunk. A honlapunk használatával ön a tájékoztatásunkat tudomásul veszi.' );
+    $cookieNotice->checkCookie();
   endif;
 
 

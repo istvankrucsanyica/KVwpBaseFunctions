@@ -6,7 +6,8 @@ if ( ! class_exists( 'CPT_Columns' ) ) {
    * CPT_Columns
    * Simple class to add remove and manage admin post columns
    * @author Ohad Raz <admin@bainternet.info>
-   * @version 0.1
+   * @since  1.0.1
+   * @version 1.0.1
    * @copyright 2013 Ohad Raz
    */
 
