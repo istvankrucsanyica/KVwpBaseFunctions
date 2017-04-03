@@ -7,12 +7,12 @@
    * @copyright (c) 2017, GNUv2
    * @package KVwpBaseFunctions
    * @since 1.0.2
-   * @version 1.0.3
+   * @version 1.0.4
    */
 
 
 
-class KVBF_Debug_Bar {
+class KVBF_Query_Bar {
 
   private $average_option;
 
@@ -81,6 +81,6 @@ class KVBF_Debug_Bar {
 
 }
 
-$KVBF_Debug_Bar = new KVBF_Debug_Bar();
+$KVBF_Query_Bar = new KVBF_Query_Bar();
 
 ?>

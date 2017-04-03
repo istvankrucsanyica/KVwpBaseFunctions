@@ -7,7 +7,7 @@
    * @copyright (c) 2017, GNUv2
    * @package KVwpBaseFunctions
    * @since 1.0
-   * @version 1.0.6
+   * @version 1.0.7
    */
 
 
@@ -31,8 +31,9 @@
    */
   define( 'CUSTOM_LOGIN_LOGO', '' );
   define( 'ENABLE_CUSTOM_POST_TYPES', FALSE );
+  define( 'ENABLE_CUSTOM_TAXONOMY', FALSE );
   define( 'ENABLE_CUSTOM_POST_TYPES_COLUMNS', FALSE );
-  define( 'SHOW_DEBUG_BAR', FALSE );
+  define( 'SHOW_QUERY_BAR', FALSE );
   define( 'ENABLE_COOKIE_NOTICE', FALSE );
 
 
@@ -95,6 +96,15 @@
    */
   if ( ENABLE_CUSTOM_POST_TYPES === TRUE ):
     require_once 'CPT_Core.php';
+  endif;
+
+
+  /**
+   * Ha ENABLE_CUSTOM_TAXONOMY === TRUE
+   * Példa: README.md
+   */
+  if ( ENABLE_CUSTOM_TAXONOMY === TRUE ):
+    require_once 'CT_Core.php';
   endif;
 
 
@@ -168,8 +178,8 @@
   /**
    * Show debug bar
    */
-  if ( SHOW_DEBUG_BAR === TRUE ):
-    require_once 'show-debugbar.php';
+  if ( SHOW_QUERY_BAR === TRUE ):
+    require_once 'show-querybar.php';
   endif;
 
 ?>

@@ -4,9 +4,12 @@
 &nbsp; 
 
 # Tartalomjegyzék
-* [Használat](#hasznalat)
-* [Egyedi poszt típus létrehozása] (#egyedi-poszt-tipus-letrehozasa)
-* [Poszt típusok oszlopainak kezelése/rendezése] (#poszt-tipusok-oszlopainak-kezelese-rendezese)
+* Használat
+* Egyedi poszt típus létrehozása
+* Poszt típusok oszlopainak kezelése/rendezése
+* QueryBar
+* Süti figyelmeztetés
+* Egyedi taxonómia létrehozása
 
 &nbsp; 
 
@@ -143,6 +146,84 @@ define( 'ENABLE_CUSTOM_POST_TYPES_COLUMNS', TRUE );
 
 ```php
   $post_columns->remove_column('date');
+```
+
+&nbsp;
+
+#Süti figyelmeztetés
+>@since 1.0.6
+
+&nbsp;
+
+Tegyük elérhetővé a használat:
+
+```php
+define( 'ENABLE_COOKIE_NOTICE', TRUE );
+```
+Változtassuk meg a szövegeket, ha szükséges
+
+```php
+$cookieNotice = new KVBF_CookieNotice();
+$cookieNotice->setTime( '+30 days' );
+$cookieNotice->setName( 'cookieNoticeAccepted' );
+$cookieNotice->setButonName( 'Elfogadom' );
+$cookieNotice->setMessage( 'Kedves Látogató! Tájékoztatjuk, hogy a honlap felhasználói élmény fokozásának érdekében sütiket alkalmazunk. A honlapunk használatával ön a tájékoztatásunkat tudomásul veszi.' );
+$cookieNotice->checkCookie();
+```
+
+A ```HTML``` váz a következőképpen épül fel, nem tartalmaz ```CSS```-t, kedvünk szerinti kinézetet, pozicítót adhatunk neki :)
+
+```html
+<div class="cookie-notice-container">
+	<div class="cookie-notice-message"> ÜZENET HELYE </div>
+    <div class="cookie-notice-button">
+    	<button id="accept_cookie">GOMB SZÖVEGE</button>
+    </div>
+</div>
+```
+
+&nbsp;
+
+#QueryBar
+>@since v1.0.2
+
+&nbsp;
+
+Egy egyszerű megjelentítő, ami a információkat ad számunka a query-k számáról, futási idejükről, memória használatról.
+
+Tegyük elérhetővé a használat:
+
+```php
+define( 'SHOW_QUERY_BAR', TRUE );
+```
+![](http://istvankrucsanyica.com/query_bar.jpg)
+
+&nbsp;
+
+#Egyedi taxonómia létrehozása
+>@since 1.0.7
+
+>thanks for [Justin Sternberg] (https://github.com/WebDevStudios/Taxonomy_Core)
+
+&nbsp;
+
+Tegyük elérhetővé a használatát:
+
+```php
+define( 'ENABLE_CUSTOM_TAXONOMY', TRUE );
+```
+
+```php
+$valami = array(
+	__( 'Valami', 'your-text-domain' ),
+	__( 'Valamik', 'your-text-domain' ),
+	'valami-tax'
+);
+```
+Következő lépésben a 'Valami' taxonómiát regisztráljuk hozzá a 'Nagyon valami' poszt típushoz.
+
+```php
+$valamik = register_via_taxonomy_core( $valami, array(), array( 'nagyon-valami' ) );
 ```
 
 &nbsp;
