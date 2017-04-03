@@ -1,7 +1,7 @@
 # KVwpBaseFunctions
->v1.0.6
+>v1.0.7
 
-&nbsp; 
+&nbsp;
 
 # Tartalomjegyzék
 * Használat
@@ -11,7 +11,7 @@
 * Süti figyelmeztetés
 * Egyedi taxonómia létrehozása
 
-&nbsp; 
+&nbsp;
 
 # Használat
 
@@ -24,11 +24,11 @@
 
 3. A további szükséges módosításokat az **includes/theme-functions.php** file-ban végezd el.
 
-&nbsp; 
+&nbsp;
 
 # Egyedi poszt típus létrehozása
 
->@since v1.0.1  
+>@since v1.0.1
 >thanks for [Justin Sternberg] (https://github.com/Mte90/CPT_Core)
 
 &nbsp;
@@ -44,9 +44,9 @@ A létrehoztt file-ban hívjuk meg a **register_via_cpt_core()** függvényt, k�
 
 Az első tömb a létrehozni kívánt post típus *nevét*, *nevét többesszámban* és a *slug*-ot tartalmazza.
 
-A második tömbben az argumentumok listáját vehetjük fel:  
-- supports (alap értelmezetten mi jelenjen meg, pl.: cím, szerkesztő), az alábbi elemek érhetőek el:  
-&nbsp;&nbsp; - title, editor, author, thumbnail, excerpt, trackbacks, custom-fields, comments, revisions, page-attributes, post-formats.  
+A második tömbben az argumentumok listáját vehetjük fel:
+- supports (alap értelmezetten mi jelenjen meg, pl.: cím, szerkesztő), az alábbi elemek érhetőek el:
+&nbsp;&nbsp; - title, editor, author, thumbnail, excerpt, trackbacks, custom-fields, comments, revisions, page-attributes, post-formats.
 - megadható a megjelenő ikon is, az ikonok listáját itt találod: [Dashicons](https://developer.wordpress.org/resource/dashicons/#admin-tools)
 
 További információ: [register_post_type()](https://developer.wordpress.org/reference/functions/register_post_type/)
@@ -68,7 +68,7 @@ További információ: [register_post_type()](https://developer.wordpress.org/re
 &nbsp;
 
 # Poszt típusok oszlopainak kezelése/rendezése
->@since v1.0.1  
+>@since v1.0.1
 >thanks for [Ohad Raz] (https://en.bainternet.info/custom-post-types-columns/)
 
 &nbsp;
@@ -84,7 +84,7 @@ define( 'ENABLE_CUSTOM_POST_TYPES_COLUMNS', TRUE );
 ```php
   $post_columns = new CPT_Columns( 'post' );
 
-  // Ha cserélni vagy újra rendezni szerétnénk az oszlopokat, 
+  // Ha cserélni vagy újra rendezni szerétnénk az oszlopokat,
   // akkor második paraméterként adjuk meg a true-t
   $post_columns = new CPT_Columns( 'post', true );
 ```
