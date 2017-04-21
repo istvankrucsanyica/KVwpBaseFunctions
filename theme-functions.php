@@ -7,7 +7,7 @@
    * @copyright (c) 2017, GNUv2
    * @package KVwpBaseFunctions
    * @since 1.0
-   * @version 1.0.7
+   * @version 1.0.8
    */
 
 
@@ -35,7 +35,9 @@
   define( 'ENABLE_CUSTOM_POST_TYPES_COLUMNS', FALSE );
   define( 'SHOW_QUERY_BAR', FALSE );
   define( 'ENABLE_COOKIE_NOTICE', FALSE );
-
+  define( 'WOOCOMMERCE_ENABLED', FALSE );
+  define( 'WPML_ENABLED', FALSE );
+  define( 'ROLE_FUNCTIONS', FALSE );
 
   /**
    * Define social variables
@@ -180,6 +182,11 @@
    */
   if ( SHOW_QUERY_BAR === TRUE ):
     require_once 'show-querybar.php';
+  endif;
+
+
+  if ( ROLE_FUNCTIONS === TRUE ):
+    require_once 'role-functions.php';
   endif;
 
 ?>
