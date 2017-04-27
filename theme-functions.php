@@ -6,8 +6,8 @@
    * @author Kreatív Vonalak - Istvan Krucsanyica <https://github.com/istvankrucsanyica/KVwpBaseFunctions>
    * @copyright (c) 2017, GNUv2
    * @package KVwpBaseFunctions
-   * @since 1.0
-   * @version 1.1.0
+   * @since 1.0.0
+   * @version 1.1.1
    */
 
 
@@ -20,7 +20,7 @@
   define( 'DEVELOPER_NAME', 'Kreatív Vonalak' );
   define( 'DEVELOPER_URL', 'http://www.kreativvonalak.hu/' );
   define( 'GA_CODE', '' );
-  define( 'USE_EDITOR_STYLE', TRUE );
+  define( 'USE_EDITOR_STYLE', FALSE );
   /**
    * Használat:
    * Ha jó a beépített, akkor hagyjuk üresen a CUSTOM_LOGIN_LOGO-t.
@@ -30,14 +30,14 @@
    * KÉPFILE_MAGASSÁGA és KÉPFILE_SZÉLESSÉGE - pl.: 55, a px kiterjesztést nem kell hozzáteni
    */
   define( 'CUSTOM_LOGIN_LOGO', '' );
-  define( 'ENABLE_CUSTOM_POST_TYPES', TRUE );
+  define( 'ENABLE_CUSTOM_POST_TYPES', FALSE );
   define( 'ENABLE_CUSTOM_TAXONOMY', FALSE );
-  define( 'ENABLE_CUSTOM_POST_TYPES_COLUMNS', TRUE );
+  define( 'ENABLE_CUSTOM_POST_TYPES_COLUMNS', FALSE );
   define( 'SHOW_QUERY_BAR', FALSE );
   define( 'ENABLE_COOKIE_NOTICE', FALSE );
-  define( 'WOOCOMMERCE_ENABLED', TRUE );
+  define( 'WOOCOMMERCE_ENABLED', FALSE );
   define( 'WPML_ENABLED', FALSE);
-  define( 'ROLE_FUNCTIONS' , TRUE);
+  define( 'ROLE_FUNCTIONS' , FALSE);
 
   /**
    * Define social variables
@@ -129,8 +129,8 @@
     $cookieNotice = new KVBF_CookieNotice();
     $cookieNotice->setTime( '+30 days' );
     $cookieNotice->setName( 'cookieNoticeAccepted' );
-    $cookieNotice->setButonName( 'Elfogadom' );
-    $cookieNotice->setMessage( 'Kedves Látogató! Tájékoztatjuk, hogy a honlap felhasználói élmény fokozásának érdekében sütiket alkalmazunk. A honlapunk használatával ön a tájékoztatásunkat tudomásul veszi.' );
+    $cookieNotice->setButonName( __( 'Elfogadom', TEXTDOMAIN ) );
+    $cookieNotice->setMessage( __( 'Kedves Látogató! Tájékoztatjuk, hogy a honlap felhasználói élmény fokozásának érdekében sütiket alkalmazunk. A honlapunk használatával ön a tájékoztatásunkat tudomásul veszi.', TEXTDOMAIN ) );
     $cookieNotice->checkCookie();
   endif;
 
