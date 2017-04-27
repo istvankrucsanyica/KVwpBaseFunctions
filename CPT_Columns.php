@@ -7,7 +7,7 @@ if ( ! class_exists( 'CPT_Columns' ) ) {
    * Simple class to add remove and manage admin post columns
    * @author Ohad Raz <admin@bainternet.info>
    * @since  1.0.1
-   * @version 1.0.1
+   * @version 1.0.2
    * @copyright 2013 Ohad Raz
    */
 
@@ -72,11 +72,14 @@ if ( ! class_exists( 'CPT_Columns' ) ) {
     }
 
     function do_column( $post_id, $column, $column_name ) {
-      if ( in_array( $column['type'], array( 'text', 'thumb', 'post_meta', 'custom_tax' ) ) )
+      if ( in_array( $column['type'], array( 'text', 'thumb', 'post_meta', 'custom_tax', 'custom_thumb', 'post_id' ) ) )
         echo $column['prefix'];
       switch ( $column['type'] ) {
         case 'text':
           echo apply_filters( 'cpt_columns_text_'.$column_name, $column['text'], $post_id, $column, $column_name );
+          break;
+        case 'post_id':
+          echo $post_id;
           break;
         case 'thumb':
           if ( has_post_thumbnail( $post_id ) ) {
@@ -84,6 +87,16 @@ if ( ! class_exists( 'CPT_Columns' ) ) {
             }else {
               echo 'N/A';
             }
+          break;
+        case 'custom_thumb':
+          $tmp = get_post_meta( $post_id, $column['meta_key'], true );
+          $image = wp_get_attachment_url( $tmp );
+          if ( $image ) {
+            if ( ! empty( $column['image_width'] ) ) { $iw = $column['image_width']; } else { $iw ='150'; }
+            echo '<img src="' . $image . '" alt="" width="'. $iw .'" />';
+          } else {
+            echo 'N/A';
+          }
           break;
         case 'post_meta':
           $tmp = get_post_meta( $post_id, $column['meta_key'], true );
@@ -103,7 +116,7 @@ if ( ! class_exists( 'CPT_Columns' ) ) {
             else echo '';
           break;
       }
-      if ( in_array( $column['type'], array( 'text', 'thumb', 'post_meta', 'custom_tax' ) ) )
+      if ( in_array( $column['type'], array( 'text', 'thumb', 'post_meta', 'custom_tax', 'custom_thumb', 'post_id' ) ) )
         echo $column['suffix'];
     }
 
@@ -123,17 +136,18 @@ if ( ! class_exists( 'CPT_Columns' ) ) {
 
     function add_column( $key, $args ) {
       $def = array(
-        'label'    => 'column label',
-        'size'     => array('80','80'),
-        'taxonomy' => '',
-        'meta_key' => '',
-        'sortable' => false,
-        'text'     => '',
-        'type'     => 'native', //'native','post_meta','custom_tax',text
-        'orderby'  => 'meta_value',
-        'prefix'   => '',
-        'suffix'   => '',
-        'std'      => '',
+        'label'       => 'column label',
+        'size'        => array('80','80'),
+        'taxonomy'    => '',
+        'meta_key'    => '',
+        'sortable'    => false,
+        'text'        => '',
+        'type'        => 'native', //'native','post_meta','custom_tax','custom_thumb','post_id',text
+        'orderby'     => 'meta_value',
+        'prefix'      => '',
+        'suffix'      => '',
+        'std'         => '',
+        'image_width' => '',
       );
       $this->cpt_columns[$key] = array_merge( $def, $args );
       if ( $this->cpt_columns[$key]['sortable'] )
