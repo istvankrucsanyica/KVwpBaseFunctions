@@ -7,7 +7,7 @@
    * @copyright (c) 2017, GNUv2
    * @package KVwpBaseFunctions
    * @since 1.0.3
-   * @version 1.0.0
+   * @version 1.0.1
    */
 
 
@@ -19,7 +19,8 @@
   function kvbf_admin_bar_remove() {
     global $wp_admin_bar;
     $wp_admin_bar->remove_menu( 'wp-logo' );
-    $wp_admin_bar->remove_node( 'search' );
+    $wp_admin_bar->remove_menu( 'customize' );
+    $wp_admin_bar->remove_menu( 'search' );
   }
 
 
