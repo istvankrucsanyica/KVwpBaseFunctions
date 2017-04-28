@@ -6,8 +6,8 @@
    * @author Kreatív Vonalak - Istvan Krucsanyica <https://github.com/istvankrucsanyica/KVwpBaseFunctions>
    * @copyright (c) 2017, GNUv2
    * @package KVwpBaseFunctions
-   * @since 1.0
-   * @version 1.0.8
+   * @since 1.0.0
+   * @version 1.1.1
    */
 
 
@@ -36,8 +36,8 @@
   define( 'SHOW_QUERY_BAR', FALSE );
   define( 'ENABLE_COOKIE_NOTICE', FALSE );
   define( 'WOOCOMMERCE_ENABLED', FALSE );
-  define( 'WPML_ENABLED', FALSE );
-  define( 'ROLE_FUNCTIONS', FALSE );
+  define( 'WPML_ENABLED', FALSE);
+  define( 'ROLE_FUNCTIONS' , FALSE);
 
   /**
    * Define social variables
@@ -129,8 +129,8 @@
     $cookieNotice = new KVBF_CookieNotice();
     $cookieNotice->setTime( '+30 days' );
     $cookieNotice->setName( 'cookieNoticeAccepted' );
-    $cookieNotice->setButonName( 'Elfogadom' );
-    $cookieNotice->setMessage( 'Kedves Látogató! Tájékoztatjuk, hogy a honlap felhasználói élmény fokozásának érdekében sütiket alkalmazunk. A honlapunk használatával ön a tájékoztatásunkat tudomásul veszi.' );
+    $cookieNotice->setButonName( __( 'Elfogadom', TEXTDOMAIN ) );
+    $cookieNotice->setMessage( __( 'Kedves Látogató! Tájékoztatjuk, hogy a honlap felhasználói élmény fokozásának érdekében sütiket alkalmazunk. A honlapunk használatával ön a tájékoztatásunkat tudomásul veszi.', TEXTDOMAIN ) );
     $cookieNotice->checkCookie();
   endif;
 
@@ -159,7 +159,8 @@
     'disable-search.php',           // Disable search
     'disable-comments.php',         // Disable comments
     'admin-bar.php',                // Admin bar modification
-    'login-screen.php'              // Login screen modification
+    'login-screen.php',             // Login screen modification
+    'types/cpt-eszkozok.php'     		// CPT eszközök "Eszközök és technológiák" szekció
   );
 
   if ( is_admin() ) {
