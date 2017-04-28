@@ -1,5 +1,5 @@
 # KVwpBaseFunctions
->v1.0.7
+>v1.1.1
 
 &nbsp;
 
@@ -10,6 +10,7 @@
 * QueryBar
 * Süti figyelmeztetés
 * Egyedi taxonómia létrehozása
+* Admin role
 
 &nbsp;
 
@@ -224,6 +225,31 @@ Következő lépésben a 'Valami' taxonómiát regisztráljuk hozzá a 'Nagyon v
 
 ```php
 $valamik = register_via_taxonomy_core( $valami, array(), array( 'nagyon-valami' ) );
+```
+
+&nbsp;
+
+## Admin role
+>@since 1.0.8
+
+&nbsp;
+
+Bővebb info: [Roles & Capabilities](https://codex.wordpress.org/Roles_and_Capabilities#Capabilities) és [add_role()](https://developer.wordpress.org/reference/functions/add_role/)
+
+Előre beállítottunk a **role-functions.php**-ban egy 'Admin' role-t, ami korlátozott admin hozzáférést biztosít. A jogkörök módosításához a megfelelő sorban állítsuk át a *true* értéket *false*-ra, vagy egyszerűen vegyük ki a sort.
+
+&nbsp;
+
+## WooCommerce és WPML jogkörök (Admin role)
+>@since 1.0.8
+
+&nbsp;
+
+Külön lehetőség van engedélyezni a jogköröket, ha használatban van a woocommerce vagy a wpml plugin. Engedélyezni a **theme-functions.php**-ban lehet a *FALSE* érték *TRUE*-ra átállításával:
+
+```php
+  define( 'WOOCOMMERCE_ENABLED', FALSE );
+  define( 'WPML_ENABLED', FALSE );
 ```
 
 &nbsp;

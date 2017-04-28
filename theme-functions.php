@@ -20,7 +20,7 @@
   define( 'DEVELOPER_NAME', 'Kreatív Vonalak' );
   define( 'DEVELOPER_URL', 'http://www.kreativvonalak.hu/' );
   define( 'GA_CODE', '' );
-  define( 'USE_EDITOR_STYLE', TRUE );
+  define( 'USE_EDITOR_STYLE', FALSE );
   /**
    * Használat:
    * Ha jó a beépített, akkor hagyjuk üresen a CUSTOM_LOGIN_LOGO-t.
@@ -30,14 +30,14 @@
    * KÉPFILE_MAGASSÁGA és KÉPFILE_SZÉLESSÉGE - pl.: 55, a px kiterjesztést nem kell hozzáteni
    */
   define( 'CUSTOM_LOGIN_LOGO', '' );
-  define( 'ENABLE_CUSTOM_POST_TYPES', TRUE );
+  define( 'ENABLE_CUSTOM_POST_TYPES', FALSE );
   define( 'ENABLE_CUSTOM_TAXONOMY', FALSE );
-  define( 'ENABLE_CUSTOM_POST_TYPES_COLUMNS', TRUE );
+  define( 'ENABLE_CUSTOM_POST_TYPES_COLUMNS', FALSE );
   define( 'SHOW_QUERY_BAR', FALSE );
   define( 'ENABLE_COOKIE_NOTICE', FALSE );
-  define( 'WOOCOMMERCE_ENABLED', TRUE );
-  define( 'WPML_ENABLED', FALSE);
-  define( 'ROLE_FUNCTIONS' , TRUE);
+  define( 'WOOCOMMERCE_ENABLED', FALSE );
+  define( 'WPML_ENABLED', FALSE );
+  define( 'ROLE_FUNCTIONS', FALSE );
 
   /**
    * Define social variables
@@ -159,8 +159,7 @@
     'disable-search.php',           // Disable search
     'disable-comments.php',         // Disable comments
     'admin-bar.php',                // Admin bar modification
-    'login-screen.php',             // Login screen modification
-    'types/cpt-eszkozok.php'     		// CPT eszközök "Eszközök és technológiák" szekció
+    'login-screen.php'              // Login screen modification
   );
 
   if ( is_admin() ) {
