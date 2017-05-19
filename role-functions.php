@@ -163,7 +163,7 @@
 			'unfiltered_upload' => true,
 			'update_themes' => true,
 			'upload_files' => true,
-			$wp_cap,
+			$wc_cap,
 			$wpml_cap,
 		) );
 
