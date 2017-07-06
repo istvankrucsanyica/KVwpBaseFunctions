@@ -6,7 +6,7 @@ if ( ! class_exists( 'KVBF_CookieNotice' ) ) {
    * Cookie Notice
    * A felhasználók tájékoztatása a sütik használatáról.
    * @author Istvan Krucsanyica <istvan.krucsanyica@gmail.com>
-   * @version 1.0.0
+   * @version 1.0.1
    * @since 1.0.6
    * @copyright 2017 Istvan Krucsanyica
    */
@@ -43,8 +43,25 @@ if ( ! class_exists( 'KVBF_CookieNotice' ) ) {
               createCookie( "' . $this->getName() . '", ' . current_time( 'timestamp' ) . ', ' . $this->getTime() . ' );
               $( ".cookie-notice-container" ).remove();
             });
-            function createCookie( name, value, days ) {
-              document.cookie = name + "=" + value + "; expires=" + days +"; path=/";
+            function createCookie(name, value, expires, path, domain) {
+              var cookie = name + "=" + escape(value) + ";";
+              if (expires) {
+                if(expires instanceof Date) {
+                  if (isNaN(expires.getTime()))
+                   expires = new Date();
+                }
+                else
+                  expires = new Date(new Date().getTime() + parseInt(expires) * 1000 * 60 * 60 * 24);
+
+                cookie += "expires=" + expires.toGMTString() + ";";
+              }
+
+              if (path)
+                cookie += "path=" + path + ";";
+              if (domain)
+                cookie += "domain=" + domain + ";";
+
+              document.cookie = cookie;
             }
           });
         })(jQuery);
