@@ -6,8 +6,8 @@
    * @author Kreatív Vonalak - Istvan Krucsanyica <https://github.com/istvankrucsanyica/KVwpBaseFunctions>
    * @copyright (c) 2017, GNUv2
    * @package KVwpBaseFunctions
-   * @since 1.0
-   * @version 1.0
+   * @since 1.0.0
+   * @version 1.0.1
    */
 
   if ( current_user_can( 'administrator' ) ) {
@@ -21,7 +21,7 @@
       }
     }
 
-    if ( empty( DEVELOPER_NAME ) ) {
+    if ( DEVELOPER_NAME == '' ) {
       add_action( 'admin_notices', 'kvbf_showDebugMessages2' );
       function kvbf_showDebugMessages2() {
         echo '<div id="message" class="notice notice-warning">';
@@ -30,7 +30,7 @@
       }
     }
 
-    if ( empty( GA_CODE ) ) {
+    if ( GA_CODE == '' ) {
       add_action( 'admin_notices', 'kvbf_showDebugMessages3' );
       function kvbf_showDebugMessages3() {
         echo '<div id="message" class="notice notice-warning">';
@@ -39,7 +39,7 @@
       }
     }
 
-    if ( empty( TEXTDOMAIN ) ) {
+    if ( TEXTDOMAIN == '' ) {
       add_action( 'admin_notices', 'kvbf_showDebugMessages4' );
       function kvbf_showDebugMessages4() {
         echo '<div id="message" class="notice notice-error">';

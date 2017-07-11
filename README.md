@@ -1,5 +1,5 @@
 # KVwpBaseFunctions
->v1.1.1
+>v1.1.3
 
 &nbsp;
 
@@ -30,7 +30,7 @@
 # Egyedi poszt típus létrehozása
 
 >@since v1.0.1
->thanks for [Justin Sternberg] (https://github.com/Mte90/CPT_Core)
+>thanks for [Justin Sternberg](https://github.com/Mte90/CPT_Core)
 
 &nbsp;
 
@@ -70,7 +70,7 @@ További információ: [register_post_type()](https://developer.wordpress.org/re
 
 # Poszt típusok oszlopainak kezelése/rendezése
 >@since v1.0.1
->thanks for [Ohad Raz] (https://en.bainternet.info/custom-post-types-columns/)
+>thanks for [Ohad Raz](https://en.bainternet.info/custom-post-types-columns/)
 
 &nbsp;
 
@@ -204,7 +204,7 @@ define( 'SHOW_QUERY_BAR', TRUE );
 #Egyedi taxonómia létrehozása
 >@since 1.0.7
 
->thanks for [Justin Sternberg] (https://github.com/WebDevStudios/Taxonomy_Core)
+>thanks for [Justin Sternberg](https://github.com/WebDevStudios/Taxonomy_Core)
 
 &nbsp;
 

@@ -7,7 +7,7 @@
    * @copyright (c) 2017, GNUv2
    * @package KVwpBaseFunctions
    * @since 1.0.0
-   * @version 1.1.1
+   * @version 1.1.3
    */
 
 
@@ -36,8 +36,9 @@
   define( 'SHOW_QUERY_BAR', FALSE );
   define( 'ENABLE_COOKIE_NOTICE', FALSE );
   define( 'WOOCOMMERCE_ENABLED', FALSE );
-  define( 'WPML_ENABLED', FALSE);
-  define( 'ROLE_FUNCTIONS' , FALSE);
+  define( 'WPML_ENABLED', FALSE );
+  define( 'ROLE_FUNCTIONS' , FALSE );
+  define( 'ENABLE_TGM', TRUE );
 
   /**
    * Define social variables
@@ -46,46 +47,6 @@
   define( 'YOUTUBE', '' );
   define( 'TWITTER', '' );
   define( 'INSTAGRAM', '' );
-
-
-
-  /**
-   * Rewrite global definition
-   */
-
-
-  /**
-   * Megtiltjuk, minden felhasználónak, hogy új témát, plugin-t tudjon feltölteni
-   */
-  //define( 'DISALLOW_FILE_MODS', true );
-
-  /**
-   * Megtiltjuk minden felhasználónak, hogy szerkeszteni tudja a téma vagy a plugin file-jait
-   */
-  define( 'DISALLOW_FILE_EDIT', true );
-
-  /**
-   * Egy adott posztból hány db változatot őrizzen meg a WP,
-   * ha a szám helyett false szerepel, le van tiltva az adott funkció
-   */
-  define( 'WP_POST_REVISIONS', 3 );
-
-  /**
-   * A WP X nap után törli a lomtárat
-   * Ha 0, akkor a WP nem kérdezz rá, hogy akarja-e törölni,
-   * hanem automatikusan törli anélkül, hogy a lomtárba helyezné az adott elemet
-   */
-  define('EMPTY_TRASH_DAYS', 7);
-
-  /**
-   * x másodperc után mentődjön a post, az alap 60 mp
-   */
-  define('AUTOSAVE_INTERVAL', 120);
-
-  /**
-   * alapértelmezett téma beállítása
-   */
-  //define('WP_DEFAULT_THEME', '');
 
 
 
@@ -132,6 +93,14 @@
     $cookieNotice->setButonName( __( 'Elfogadom', TEXTDOMAIN ) );
     $cookieNotice->setMessage( __( 'Kedves Látogató! Tájékoztatjuk, hogy a honlap felhasználói élmény fokozásának érdekében sütiket alkalmazunk. A honlapunk használatával ön a tájékoztatásunkat tudomásul veszi.', TEXTDOMAIN ) );
     $cookieNotice->checkCookie();
+  endif;
+
+
+  /**
+   * Alapértelmezett pluginok egyszerű telepítése és aktíválása
+   */
+  if ( ENABLE_TGM === TRUE ):
+    require_once 'tgm-plugin/tgm-plugin-activation.php';
   endif;
 
 

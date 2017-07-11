@@ -6,8 +6,8 @@
    * @author Kreatív Vonalak - Istvan Krucsanyica <https://github.com/istvankrucsanyica/KVwpBaseFunctions>
    * @copyright (c) 2017, GNUv2
    * @package KVwpBaseFunctions
-   * @since 1.0
-   * @version 1.0.3
+   * @since 1.0.0
+   * @version 1.0.4
    */
 
 
@@ -18,7 +18,7 @@
   if ( ! empty( DEVELOPER_NAME ) ) {
     add_filter( 'admin_footer_text', 'kvbf_remove_footer_admin' );
     function kvbf_remove_footer_admin() {
-      echo '&copy; '.date('Y').' '.DEVELOPER_NAME;
+      echo '&copy; ' . date('Y') . ' <a href=" ' . DEVELOPER_URL . ' " target="_blank">' . DEVELOPER_NAME . '</a>';
     }
   }
 
@@ -35,12 +35,30 @@
 
 
   /**
-   * Disable admin help link
+   * Disable admin help link, if WooCommerce is not enabled
    */
   add_action('admin_head', 'kvbf_remove_help_tabs');
   function kvbf_remove_help_tabs() {
-    $screen = get_current_screen();
-    $screen->remove_help_tabs();
+    if ( !class_exists( 'WooCommerce', false ) ) {
+      $screen = get_current_screen();
+      $screen->remove_help_tabs();
+    }
+  }
+
+  /**
+   * Add custom background color to the posts lists
+   */
+  add_action('admin_footer','kvbf_posts_status_color');
+  function kvbf_posts_status_color(){
+  ?>
+    <style>
+    .status-draft{background: #FCE3F2!important;}
+    .status-pending{background: #87C5D6!important;}
+    .status-publish{}
+    .status-future{background: #C6EBF5!important;}
+    .status-private{background:#F2D46F!important;}
+    </style>
+  <?php
   }
 
 ?>
