@@ -6,7 +6,7 @@ if ( ! class_exists( 'KVBF_CookieNotice' ) ) {
    * Cookie Notice
    * A felhasználók tájékoztatása a sütik használatáról.
    * @author Istvan Krucsanyica <istvan.krucsanyica@gmail.com>
-   * @version 1.0.1
+   * @version 1.0.2
    * @since 1.0.6
    * @copyright 2017 Istvan Krucsanyica
    */
@@ -88,7 +88,7 @@ if ( ! class_exists( 'KVBF_CookieNotice' ) ) {
       if ( ! $this->isSearchEngine() ):
         if ( ! isset( $_COOKIE[$this->getName()] ) ):
           add_action( 'wp_footer', array( $this, 'show_html' ) );
-          add_action( 'wp_enqueue_scripts', array( $this, 'show_script' ) );
+          add_action( 'wp_footer', array( $this, 'show_script' ), 100 );
         endif;
       endif;
     }
