@@ -40,7 +40,7 @@ if ( ! class_exists( 'KVBF_CookieNotice' ) ) {
         (function($) {
           $( document ).ready(function() {
             $( "#accept_cookie" ).on( "click", function() {
-              createCookie( "' . $this->getName() . '", ' . current_time( 'timestamp' ) . ', ' . $this->getTime() . ' );
+              createCookie( "' . $this->getName() . '", ' . current_time( 'timestamp' ) . ', ' . $this->getTime() . ', "/" );
               $( ".cookie-notice-container" ).remove();
             });
             function createCookie(name, value, expires, path, domain) {
