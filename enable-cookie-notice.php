@@ -6,7 +6,7 @@ if ( ! class_exists( 'KVBF_CookieNotice' ) ) {
    * Cookie Notice
    * A felhasználók tájékoztatása a sütik használatáról.
    * @author Istvan Krucsanyica <istvan.krucsanyica@gmail.com>
-   * @version 1.0.2
+   * @version 1.0.3
    * @since 1.0.6
    * @copyright 2017 Istvan Krucsanyica
    */
@@ -17,7 +17,6 @@ if ( ! class_exists( 'KVBF_CookieNotice' ) ) {
     private $cookie_validity;
     private $button_name;
     private $message;
-
 
     public function __construct() {
 
@@ -37,34 +36,34 @@ if ( ! class_exists( 'KVBF_CookieNotice' ) ) {
     private function set_script() {
       echo '
       <script type="text/javascript">
-        (function($) {
-          $( document ).ready(function() {
-            $( "#accept_cookie" ).on( "click", function() {
-              createCookie( "' . $this->getName() . '", ' . current_time( 'timestamp' ) . ', ' . $this->getTime() . ', "/" );
-              $( ".cookie-notice-container" ).remove();
-            });
-            function createCookie(name, value, expires, path, domain) {
-              var cookie = name + "=" + escape(value) + ";";
-              if (expires) {
-                if(expires instanceof Date) {
-                  if (isNaN(expires.getTime()))
-                   expires = new Date();
-                }
-                else
-                  expires = new Date(new Date().getTime() + parseInt(expires) * 1000 * 60 * 60 * 24);
+        var button = document.getElementById("accept_cookie");
+        var cn_container = document.getElementsByClassName("cookie-notice-container");
 
-                cookie += "expires=" + expires.toGMTString() + ";";
-              }
+        button.addEventListener("click",function(e){
+          createCookie( "' . $this->getName() . '", ' . current_time( 'timestamp' ) . ', ' . $this->getTime() . ', "/" );
+          cn_container[0].style.display ="none";
+        },false);
 
-              if (path)
-                cookie += "path=" + path + ";";
-              if (domain)
-                cookie += "domain=" + domain + ";";
-
-              document.cookie = cookie;
+        function createCookie(name, value, expires, path, domain) {
+          var cookie = name + "=" + escape(value) + ";";
+          if (expires) {
+            if(expires instanceof Date) {
+              if (isNaN(expires.getTime()))
+               expires = new Date();
             }
-          });
-        })(jQuery);
+            else
+              expires = new Date(new Date().getTime() + parseInt(expires) * 1000 * 60 * 60 * 24);
+
+            cookie += "expires=" + expires.toGMTString() + ";";
+          }
+
+          if (path)
+            cookie += "path=" + path + ";";
+          if (domain)
+            cookie += "domain=" + domain + ";";
+
+          document.cookie = cookie;
+        }
       </script>';
     }
 
@@ -88,7 +87,7 @@ if ( ! class_exists( 'KVBF_CookieNotice' ) ) {
       if ( ! $this->isSearchEngine() ):
         if ( ! isset( $_COOKIE[$this->getName()] ) ):
           add_action( 'wp_footer', array( $this, 'show_html' ) );
-          add_action( 'wp_footer', array( $this, 'show_script' ), 100 );
+          add_action( 'wp_footer', array( $this, 'show_script' ), 10, 1 );
         endif;
       endif;
     }
