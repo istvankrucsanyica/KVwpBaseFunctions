@@ -52,8 +52,8 @@
         'required'  => false,
       ),
       array(
-        'name'      => 'Postman SMTP',
-        'slug'      => 'postman-smtp',
+        'name'      => 'Post SMTP Mailer/Email Log',
+        'slug'      => 'post-smtp',
         'required'  => false,
       ),
       array(
