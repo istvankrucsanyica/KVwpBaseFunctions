@@ -59,7 +59,7 @@
     );
 
     // Levizsgáljuk, hogy a Woocommerce engedélyezve van-e a theme-functions.php-ben
-    if ( WOOCOMMERCE_ENABLED === FALSE ) :
+    if ( WOOCOMMERCE_ENABLED === TRUE ) :
 
       $wc_cap = array(
         'assign_product_terms' => true,
@@ -139,7 +139,7 @@
     endif;
 
     // Levizsgáljuk, hogy a WPML engedélyezve van-e a theme-functions.php-ben
-    if ( WPML_ENABLED === FALSE ) :
+    if ( WPML_ENABLED === TRUE ) :
 
       $wpml_cap = array(
         'wpml_manage_languages' => true,
