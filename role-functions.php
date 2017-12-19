@@ -166,7 +166,7 @@
     add_role( 'admin', 'Admin', $wp_cap );
 
   }
-  add_action('init', 'add_admin_role');n_role');
+  add_action('init', 'add_admin_role');
 
   // Remove default roles
   function remove_roles() {
