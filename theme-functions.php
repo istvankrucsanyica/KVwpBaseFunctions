@@ -7,7 +7,7 @@
    * @copyright (c) 2017, GNUv2
    * @package KVwpBaseFunctions
    * @since 1.0.0
-   * @version 1.1.3
+   * @version 1.1.4
    */
 
 
@@ -129,7 +129,7 @@
     'disable-comments.php',         // Disable comments
     'admin-bar.php',                // Admin bar modification
     'login-screen.php',             // Login screen modification
-    'types/cpt-eszkozok.php'     		// CPT eszközök "Eszközök és technológiák" szekció
+    'disable-menu-items.php',       // Remove Admin Menu items
   );
 
   if ( is_admin() ) {
